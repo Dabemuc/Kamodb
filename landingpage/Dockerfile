@@ -9,6 +9,11 @@ COPY secrets.json /build/secrets.json
 COPY tsconfig.json /build/tsconfig.json
 COPY vite.config.ts /build/vite.config.ts
 
+# copy Caddyfile & ssl
+COPY caddy/Caddyfile /etc/caddy/Caddyfile
+COPY caddy/cert.pem /etc/caddy/cert.pem
+COPY caddy/key.pem /etc/caddy/key.pem
+
 # install node & npm
 RUN apk add nodejs npm
 

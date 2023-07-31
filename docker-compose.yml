@@ -11,8 +11,6 @@ services:
     build:
       context: landingpage
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
     networks:
       - MoDaServer_network
 
