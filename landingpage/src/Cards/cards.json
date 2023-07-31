@@ -1,0 +1,39 @@
+{
+    "cards": [
+        {
+            "name": "Cloud",
+            "url": "https://cloud.kamodb.de",
+            "description": "Cloud storage with advanced collaboration features"
+        },
+        {
+            "name": "Wiki",
+            "url": "https://wiki.kamodb.de",
+            "description": "A place to store all the knowledge"
+        },
+        {
+            "name": "VSCode",
+            "url": "https://code.kamodb.de",
+            "description": "Webbased Visual Studio Code for simple development"
+        },
+        {
+            "name": "Mail",
+            "url": "https://mail.kamodb.de",
+            "description": "description2"
+        },
+        {
+            "name": "Bitwarden",
+            "url": "https://pw.kamodb.de",
+            "description": "description2"
+        },
+        {
+            "name": "Kasm",
+            "url": "https://kasm.kamodb.de",
+            "description": "description2"
+        },
+        {
+            "name": "VPN",
+            "url": "https://vpn.kamodb.de",
+            "description": "description2"
+        }
+    ]
+}

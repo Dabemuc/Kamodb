@@ -1,0 +1,12 @@
+{
+    "themes": [
+        {
+            "key": "futuristic",
+            "path": "https://api.kamodb.de:5000/themes/futuristic.css"
+        },
+        {
+            "key": "pragmatic",
+            "path": "https://api.kamodb.de:5000/themes/pragmatic.css"
+        }
+    ]
+}

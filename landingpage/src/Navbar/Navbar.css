@@ -1,0 +1,13 @@
+.loginWrapper img.profile-pic {
+    height: 2.5em;
+    border-radius: 25px;
+}
+
+.loginWrapper .sign-out-btn{
+    /* height: 2em; */
+}
+
+.loginWrapper .sign-out-btn button{
+    height: 2em;
+    font-size: 1.2em;
+}
