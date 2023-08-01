@@ -45,7 +45,7 @@ function App() {
                 console.log("google var initialized")
             } else {
                 if(connectCount < 10){
-                    setTimeout(() => connectToGoogle(), 10)
+                    setTimeout(() => connectToGoogle(), 100)
                 }
             }
             }
