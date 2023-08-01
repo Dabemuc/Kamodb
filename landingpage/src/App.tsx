@@ -17,21 +17,38 @@ interface UserObject {
     picture: string
 }
 
+// const google = window.google;
+
 function App() {
 
-  const [user, setUser] = useState<UserObject>()
+    const [user, setUser] = useState<UserObject>()
 
-  useEffect(() => {
-        /* global google */
-        google.accounts.id.initialize({
-            client_id: secrets.googleOAuth.client_id,
-            callback: handleCallbackResponse
-        })
-        google.accounts.id.prompt()
-        google.accounts.id.renderButton(
-            document.getElementById("googleSignIn"),
-            { theme: "filled_black", shape: ""}
-        )
+    useEffect(() => {
+
+        let connectCount = 0;
+
+        connectToGoogle()
+
+        function connectToGoogle() {
+            connectCount++
+            /* global google */
+            if(typeof google !== 'undefined'){
+                google.accounts.id.initialize({
+                    client_id: secrets.googleOAuth.client_id,
+                    callback: handleCallbackResponse
+                })
+                google.accounts.id.prompt()
+                google.accounts.id.renderButton(
+                    document.getElementById("googleSignIn"),
+                    { theme: "filled_black", shape: ""}
+                )
+                console.log("google var initialized")
+            } else {
+                if(connectCount < 10){
+                    setTimeout(() => connectToGoogle(), 10)
+                }
+            }
+            }
     }, [])
 
     function handleCallbackResponse(response: any) {
