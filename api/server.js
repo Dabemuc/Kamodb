@@ -13,6 +13,8 @@ app.use(cors())
 const ThemesfolderPath = "./Themes/"
 const themes =  require(ThemesfolderPath + "listOfThemes.json")
 
+const AssetsfolderPath = "./assets/"
+
 var options = {
     key: fs.readFileSync('./ssl/privkey1.pem'),
     cert: fs.readFileSync('./ssl/cert1.pem'),
@@ -31,11 +33,15 @@ app.get("/themes/:fileName", (req, res) => {
     res.download(ThemesfolderPath + req.params.fileName, function(err) {
         if(err) {
             console.log(err);
-            res.json([{"result": "theme file does not exist", "filename": req.params.fileName}]);
+            res.json([{"result": "error", "err": `theme file [${req.params.fileName}] does not exist`}]);
         }
     })
 })
-
-
-// //start listener on port 5000
-// app.listen(5000, () => {console.log("Server started on port 5000")})
+app.get("/assets/:assetName", (req, res) => {
+    res.download(AssetsfolderPath + req.params.assetName, function(err) {
+        if(err) {
+            console.log(err);
+            res.json([{"result": "error", "err": `asset file [${req.params.assetName}] does not exist`}]);
+        }
+    })
+})
