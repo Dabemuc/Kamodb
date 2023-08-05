@@ -1,6 +1,10 @@
 {
     "themes": [
         {
+            "key": "desert",
+            "path": "https://api.kamodb.de:5000/themes/desert.css"
+        },
+        {
             "key": "futuristic",
             "path": "https://api.kamodb.de:5000/themes/futuristic.css"
         },

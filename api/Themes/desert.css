@@ -1,0 +1,106 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+}
+
+#root {
+    --cardColor: #fcaf3c;
+    --backgroundColor: #001220;
+    --textColor: #733f25;
+
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://api.kamodb.de:5000/assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    position: absolute !important;
+    top: 0px !important;
+    z-index: 5 !important;
+    width: 80vw;
+}
+
+.navbar .navbar-brand {
+    overflow: hidden;
+}
+
+.navbar .navbar-brand img {
+    content: url("https://api.kamodb.de:5000/assets/Kamodb-Logo-V2-Transparent.png");
+    zoom: 6%;
+}
+
+.navbar .navbar-toggler > *{
+    position: relative;
+    right: 0px;
+}
+
+.navbar .navbar-collapse *{
+    float: right;
+}
+
+.cards {
+    --wrapperHeight: 50vh;
+    --wrapperWidth: 80vw;
+    --viewportHalfPoint: calc(var(--wrapperWidth)/2);
+    --outerSize: 14rem;
+    margin-top: 15vh;
+    height: var(--wrapperHeight);
+    width: var(--wrapperWidth);
+
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    /* grid-auto-columns: 28%; */
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+
+    padding-top: 10vh;
+
+    /* -ms-overflow-style: none;  IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.cards::-webkit-scrollbar {     /* Chrome, Safari and Opera */
+    display: none;
+}
+
+.cards .card {
+    height: var(--outerSize);
+    width: var(--outerSize);
+    max-height: 50vw;
+    max-width: 50vw;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.cards .card-content {
+    background-color: var(--cardColor);
+    border: 1px solid black;
+    border-radius: 100%;
+    color: var(--textColor);
+    text-align: center;
+
+    opacity: var(--opacity);
+    height: var(--size);
+    width: var(--size);
+    margin-top: var(--marginTop);
+}
+
+.card .card-content h3 {
+    margin-top: 2rem;
+}
