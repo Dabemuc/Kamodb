@@ -40,7 +40,8 @@
 
     .navbar-brand {
         margin-left: 20%;
-        content: url("../assets/Kamodb-Logo.png")
+        content: url("../assets/Kamodb-Logo.png");
+        zoom: 6%;
     }
 
     .navbar-collapse {
