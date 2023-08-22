@@ -16,8 +16,8 @@ const themes =  require(ThemesfolderPath + "listOfThemes.json")
 const AssetsfolderPath = "./assets/"
 
 var options = {
-    key: fs.readFileSync('./ssl/privkey1.pem'),
-    cert: fs.readFileSync('./ssl/cert1.pem'),
+    key: fs.readFileSync('./ssl/privkey.pem'),
+    cert: fs.readFileSync('./ssl/cert.pem'),
 };
 
 var server = https.createServer(options, app).listen(5000, function(){
